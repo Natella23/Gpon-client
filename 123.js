@@ -19,12 +19,12 @@ function getValues() {
         id: document.getElementById("idValue").value.trim() || "-",
         sn: document.getElementById("snAuth").value.trim() || "-",
         mac: document.getElementById("mac").value.trim() || "-",
-        slot: document.getElementById("interfaceNumber").value.trim() || "0",
-        port: document.getElementById("ontNumber").value.trim() || "0",
-        ont: document.getElementById("ontNumber2").value.trim() || "0",
-        service: document.getElementById("servicePort").value.trim() || "0",
-        vlan: document.getElementById("vlan").value.trim() || "1",
-        gem: document.getElementById("gemport").value.trim() || "1",
+        slot: document.getElementById("interfaceNumber").value.trim(),
+        port: document.getElementById("ontNumber").value.trim() ,
+        ont: document.getElementById("ontNumber2").value.trim() ,
+        service: document.getElementById("servicePort").value.trim() ,
+        vlan: document.getElementById("vlan").value.trim() ,
+        gem: document.getElementById("gemport").value.trim() || "5",
         multicast: document.getElementById("multicast").value.trim() || "19"
     };
 }
@@ -61,7 +61,7 @@ function service() {
 
     let d = getValues();
 
-    show(`display service-port ${d.service}`);
+    show(`display service-port all | no-more ${d.service}`);
 }
 
 function gemport() {
@@ -110,13 +110,15 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id 1 ont-srvprofile-id 1 
 
 quit
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem ?? 5} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+
+service-port vlan 300 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 4 multi-service user-vlan 300 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+
 
 display service-port port 0/${d.slot}/${d.port} ont ${d.ont}
 
 --------------------------- BIRLINK IPTV ---------------------------
 
-service-port vlan 300 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 4 multi-service user-vlan 300 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
 
 btv
 
@@ -132,7 +134,7 @@ quit
 
 config
 
-service-port vlan 350 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 12 multi-service user-vlan 350 tag-transform translate inbound traffic-table index 9 outbound traffic-table index 9
+service-port vlan 350 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem } multi-service user-vlan 350 tag-transform translate inbound traffic-table index 9 outbound traffic-table index 9
 
 quit`);
 }
