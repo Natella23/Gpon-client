@@ -6,9 +6,9 @@
 }
 
 body {
-    background: #f4f6f9;
+   background: #5872911a;
     padding: 8px;
-    font-size: 12px;
+    font-size: 12px ;
     color: #2c3e50;
 }
 
@@ -23,7 +23,7 @@ body {
 
 .card,
 .terminal-card {
-    background: #fff;
+     background: #ffffff;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 8px;
@@ -179,3 +179,38 @@ button:active {
         width: 100%;
     }
 }
+
+.input-with-btn {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.input-with-btn input {
+    border: none;
+    outline: none;
+    padding: 3px;
+    flex: 1;
+}
+
+.input-with-btn button {
+    border: none;
+    background: #587291;
+    color: white;
+    padding: 0 5px;
+    cursor: pointer;
+    font-size: 12px;
+    height: 100%;
+    transition: 0.2s;
+} 
+
+.input-with-btn button:hover {
+    background: #1976d2;
+}
+
+
+
+
+
