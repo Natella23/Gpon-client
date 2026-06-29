@@ -33,55 +33,52 @@
 
     <div class="form-grid">
         <div class="input-box">
-            <label>Slot</label>
+            
             <input list="numbers" id="interfaceNumber" placeholder="Slot">
             <datalist id="numbers"></datalist>
         </div>
 
         <div class="input-box">
-            <label>Port</label>
+           
             <input list="ports" id="ontNumber" placeholder="Port">
             <datalist id="ports"></datalist>
         </div>
 
         <div class="input-box">
-            <label>ONT</label>
-            <input type="text" id="ontNumber2" placeholder="ONT">
-        </div>
+
+    <div class="input-with-btn">
+        <input type="text" id="ontNumber2" placeholder="ONT">
+        <button onclick="port2()">ONT</button>
+    </div>
+</div>
+
+       
+      <div class="input-with-btn">
+    <input type="text" id="servicePort" placeholder="Service Port">
+    <button onclick="service()">Service Port</button>
+</div>
 
         <div class="input-box">
-            <label>Service Port</label>
-            <input type="text" id="servicePort" placeholder="Service Port">
-        </div>
-
-        <div class="input-box">
-            <label>VLAN</label>
+            
             <input type="text" id="vlan" placeholder="VLAN">
         </div>
 
-        <div class="input-box">
-            <label>GEM Port</label>
-            <input type="text" id="gemport" placeholder="GEM">
-        </div>
+        
+        <div class="input-with-btn">
+    <input type="text" id="gemport" placeholder="GEM">
+    <button onclick="gemport()"> GEM </button>
+</div>
 
         <div class="input-box">
             <label>Multicast</label>
-            <input type="number" id="multicast" value="19">
+            <input type="number" id="multicast" value="19" placeholder="Multicast">
         </div>
     </div>
 </div>
-<div class="card">
-    <div class="card-title">Quick Commands</div>
 
-    <div class="mini-buttons">
-        <button onclick="port2()">ONT Info</button>
-        <button onclick="service()">Service-Port</button>
-        <button onclick="gemport()">GEM Port</button>
-    </div>
-</div>
 <div class="card">
     <div class="card-title">Operations</div>
-
+      
     <div class="button-group">
         <button onclick="citynet()">CityNet</button>
         <button onclick="komutuGoster()">Birlink</button>
