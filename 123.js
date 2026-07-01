@@ -87,7 +87,7 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id 10 ont-srvprofile-id 1
 
 quit
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 12 multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 10 outbound traffic-table index 10
+service-port ${d.service} vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 12 multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 10 outbound traffic-table index 10
 
 service-port desc ${d.id}
 
@@ -110,9 +110,9 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id 1 ont-srvprofile-id 1 
 
 quit
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem ?? 5} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+service-port ${d.service}  vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem ?? 5} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
 
-service-port vlan 300 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 4 multi-service user-vlan 300 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
+service-port ${d.service}   vlan 300 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 4 multi-service user-vlan 300 tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6
 
 
 display service-port port 0/${d.slot}/${d.port} ont ${d.ont}
@@ -134,7 +134,7 @@ quit
 
 config
 
-service-port vlan 350 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem } multi-service user-vlan 350 tag-transform translate inbound traffic-table index 9 outbound traffic-table index 9
+service-port ${d.service}   vlan 350 gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem } multi-service user-vlan 350 tag-transform translate inbound traffic-table index 9 outbound traffic-table index 9
 
 quit`);
 }
@@ -154,7 +154,7 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id 10 ont-srvprofile-id 1
 
 quit 
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 2 multi-service user-vlan ${d.vlan}
+service-port ${d.service}  vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 2 multi-service user-vlan ${d.vlan}
 
 quit`);
 }
@@ -181,7 +181,7 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id ${d.profileId || 10} o
 
 quit
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 1 multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 7 outbound traffic-table index 7  
+service-port ${d.service}  vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport 1 multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 7 outbound traffic-table index 7  
 
 quit
 
@@ -200,7 +200,7 @@ ont add ${d.port} sn-auth ${d.sn} omci ont-lineprofile-id 20 ont-srvprofile-id 2
 
 quit
 
-service-port vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6  
+service-port ${d.service} vlan ${d.vlan} gpon 0/${d.slot}/${d.port} ont ${d.ont} gemport ${d.gem} multi-service user-vlan ${d.vlan} tag-transform translate inbound traffic-table index 6 outbound traffic-table index 6  
 
 service-port desc ${d.id}
 
